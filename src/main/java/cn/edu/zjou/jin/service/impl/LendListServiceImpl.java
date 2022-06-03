@@ -1,6 +1,8 @@
 package cn.edu.zjou.jin.service.impl;
 
 import cn.edu.zjou.jin.codeutil.DateUtil;
+import cn.edu.zjou.jin.dao.ReaderInfoMapper;
+import cn.edu.zjou.jin.po.ReaderInfo;
 import cn.edu.zjou.jin.service.LendListService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -22,6 +24,8 @@ public class LendListServiceImpl implements LendListService {
     private LendListMapper lendListMapper;
     @Autowired
     private BookInfoMapper bookInfoMapper;
+    @Autowired
+    private ReaderInfoMapper readerInfoMapper;
 
 
     @Override
@@ -82,6 +86,10 @@ public class LendListServiceImpl implements LendListService {
             }else{
                 lendList.setLendDays(DateUtil.dateCompute(lendList1.getLendDate(),lendList1.getBackDate()));
             }
+            ReaderInfo readerInfo = new ReaderInfo();
+            readerInfo.setId(lendList1.getReaderId());
+            readerInfo.setStatus(1);
+            readerInfoMapper.updateByPrimaryKeySelective(readerInfo);
             lendListMapper.updateLendListSubmit(lendList);//如果用updatePrimarykey会默认很多赋值为空
         }
         //修改书的状态
