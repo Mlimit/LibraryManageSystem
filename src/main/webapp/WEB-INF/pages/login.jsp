@@ -19,12 +19,14 @@
 
     <style>
         html, body {width: 100%;height: 100%;overflow: hidden}
-        body {background: url("${pageContext.request.contextPath}/images/loginbg.png") no-repeat center;}
+        body {background: url("${pageContext.request.contextPath}/images/loginbg.png") repeat center;}
         body:after {content:'';background-repeat:no-repeat;background-size:cover;-webkit-filter:blur(3px);-moz-filter:blur(3px);-o-filter:blur(3px);-ms-filter:blur(3px);filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
         .layui-container {width: 100%;height: 100%;overflow: hidden}
-        .admin-login-background {width:450px;height:300px;position:absolute;left:65%;top:45%;margin-top:-120px;margin-left:-50px;opacity:0.9;}
+        .admin-login-background {width:450px;height:100%;position:relative;left:37%;top:22%;opacity:0.9;}
         .logo-title {text-align:center;letter-spacing:2px;padding:14px 0;}
-        .logo-title h1 {color:#1E9FFF;font-size:25px;font-weight:bold;}
+        .logo-title h1{margin-top: 10px;color: #7b7e85;font-weight: bold;font-family: "宋体";}
+        .logo-title h2{margin-top: 10px;color: #7b7e85;font-weight: bold;font-family: "宋体";font-size: 25px;}
+        .logo-title h3{margin-top: 10px;color: #7b7e85;font-weight: bold;font-family: "宋体";}
         .login-form {background-color:#fff;border:1px solid #fff;border-radius:3px;padding:14px 20px;box-shadow:0 0 8px #eeeeee;}
         .login-form .layui-form-item {position:relative;}
         .login-form .layui-form-item label {position:absolute;left:1px;top:1px;width:38px;line-height:36px;text-align:center;color:#d2d2d2;}
@@ -39,7 +41,9 @@
         <div class="layui-form login-form">
             <form class="layui-form"  action="${pageContext.request.contextPath}/loginIn" method="post">
                 <div class="layui-form-item logo-title">
-                    <h1>图书管理系统</h1>
+                    <img src="images/zjou_logo_login.png" alt="ZJOU.Logo" />
+                    <h2>浙江海洋大学</h2>
+                    <h1>图书馆管理系统</h1>
                     <div style="color: red;text-align: center;">${msg}</div>
                 </div>
                 <div class="layui-form-item">
@@ -86,7 +90,7 @@
     }
 
     /**
-     * 实现刷新更滑验证码
+     * 实现刷新更换验证码
      */
     function timestamp(url){
         var gettime=new Date().getTime();

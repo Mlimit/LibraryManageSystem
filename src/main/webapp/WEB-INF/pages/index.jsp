@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>图书管理系统</title>
+    <title>浙江海洋大学图书馆管理系统</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -18,7 +18,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+    <link rel="icon" href="${pageContext.request.contextPath}/images/zjou_logo.ico">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/layuimini.css?v=2.0.4" media="all">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/themes/default.css" media="all">
@@ -34,6 +34,12 @@
 <div class="layui-layout layui-layout-admin">
 
     <div class="layui-header header">
+
+        <!-- 滚动字幕 -->
+        <marquee  direction="left"  behavior="scroll"  scrollamount="2" scrolldelay="1" hspace="350"   vspace="20">
+            <font  face="仿宋"  color="white"  size="4">——浙江海洋大学图书馆管理系统——</font>
+        </marquee>
+
         <div class="layui-logo layuimini-logo"></div>
 
         <div class="layuimini-header-content" >
@@ -79,7 +85,9 @@
                         </dd>
                     </dl>
                 </li>
-
+                <li class="layui-nav-item layuimini-select-bgcolor mobile layui-hide-xs">
+                    <a href="javascript:;" data-bgcolor="皮肤选择"><i class="fa fa-ellipsis-v"></i></a>
+                </li>
             </ul>
         </div>
     </div>
