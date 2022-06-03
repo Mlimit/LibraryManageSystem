@@ -95,6 +95,7 @@ public class LoginController {
                 }
                 session.setAttribute("user",admin);
                 session.setAttribute("type","admin");
+                lendListService.updateLendDays(new LendList());
             }else{//来自读者信息表
                 ReaderInfo readerInfo=readerService.queryUserInfoByNameAndPassword(username,password);
                 if(readerInfo==null){
@@ -103,9 +104,10 @@ public class LoginController {
                 }
                 session.setAttribute("user",readerInfo);
                 session.setAttribute("type","reader");
+                readerService.updateReaderStatusByLendDays(readerInfo);
             }
 
-            lendListService.updateLendDays(new LendList());
+
             return "index";
         }
     }

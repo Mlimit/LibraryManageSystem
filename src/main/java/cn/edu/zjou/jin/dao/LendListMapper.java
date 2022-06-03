@@ -70,4 +70,8 @@ public interface LendListMapper {
      */
     void updateLendListSubmit(LendList lendList);
 
+    /**
+     * 根据读者id查询借阅记录
+     */
+    List<LendList> queryLendListByRid(Integer rid);
 }

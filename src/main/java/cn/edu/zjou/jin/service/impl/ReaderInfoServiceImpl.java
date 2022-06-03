@@ -1,5 +1,7 @@
 package cn.edu.zjou.jin.service.impl;
 
+import cn.edu.zjou.jin.dao.LendListMapper;
+import cn.edu.zjou.jin.po.LendList;
 import cn.edu.zjou.jin.service.ReaderInfoService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -15,6 +17,9 @@ public class ReaderInfoServiceImpl implements ReaderInfoService {
 
     @Autowired
     private ReaderInfoMapper readerInfoMapper;
+
+    @Autowired
+    private LendListMapper lendListMapper;
 
     @Override
     public PageInfo<ReaderInfo> queryAllReaderInfo(ReaderInfo readerInfo, Integer pageNum, Integer limit) {
@@ -48,5 +53,24 @@ public class ReaderInfoServiceImpl implements ReaderInfoService {
     @Override
     public ReaderInfo queryUserInfoByNameAndPassword(String username, String password) {
         return readerInfoMapper.queryUserInfoByNameAndPassword(username, password);
+    }
+
+    /**
+     * 根据最大已借阅天数来设置读者状态 超60天则设为 0：不可借阅
+     * @param readerInfo
+     */
+    @Override
+    public void updateReaderStatusByLendDays(ReaderInfo readerInfo) {
+        List<LendList> list = lendListMapper.queryLendListByRid(readerInfo.getId());
+        int maxLendDays=0;
+        for (LendList lendList : list) {
+            if (lendList.getLendDays() > maxLendDays) {
+                maxLendDays = lendList.getLendDays();
+            }
+        }
+        if(maxLendDays>60){
+            readerInfo.setStatus(0);
+        }
+        readerInfoMapper.updateByPrimaryKey(readerInfo);
     }
 }

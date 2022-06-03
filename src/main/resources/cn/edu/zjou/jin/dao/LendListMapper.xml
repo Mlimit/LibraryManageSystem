@@ -258,4 +258,8 @@
     order by lend.id desc
   </select>
 
+  <select id="queryLendListByRid" resultType="cn.edu.zjou.jin.po.LendList">
+    SELECT * FROM lend_list where readerId=#{rid} and backType is null
+  </select>
+
 </mapper>

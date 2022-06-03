@@ -36,4 +36,11 @@ public interface ReaderInfoService {
      * 根据用户名和密码查询用户信息
      */
     ReaderInfo queryUserInfoByNameAndPassword(String username,String password);
+
+
+    /**
+     * 根据最大已借阅天数来设置读者状态 超60天则设为 0：不可借阅
+     * @param readerInfo
+     */
+    void updateReaderStatusByLendDays(ReaderInfo readerInfo);
 }
