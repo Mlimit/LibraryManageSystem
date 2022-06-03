@@ -92,9 +92,10 @@
             }],
             cols: [[
                 {type: "checkbox", width: 50},
-                //{field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'isbn', width: 100, title: '图书编号ISBN'},
+                {field: 'id', width: 60, title: 'ID', sort: true},
+                {field: 'isbn', width: 130, title: '图书编号ISBN'},
                 {field: 'name', width: 100, title: '图书名称'},
+                {field: 'call_number', width: 100, title: '索书号'},
                 {templet:'<div>{{d.typeInfo.name}}</div>',width:100,title:'图书类型'},
                 {field: 'author', width: 80, title: '作者'},
                 {field: 'price', width: 80, title: '价格'},

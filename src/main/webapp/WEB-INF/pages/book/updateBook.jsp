@@ -73,7 +73,7 @@
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">出版日期</label>
+        <label class="layui-form-label required">出版日期</label>
         <div class="layui-input-block">
             <input type="text" name="publishDate" id="date"
                    value="<fmt:formatDate value="${info.publishDate}" pattern="yyyy-MM-dd"/>"
@@ -82,9 +82,9 @@
     </div>
 
     <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">图书介绍</label>
+        <label class="layui-form-label required">索书号</label>
         <div class="layui-input-block">
-            <textarea name="introduction" class="layui-textarea" placeholder="请输入介绍信息">${info.introduction}</textarea>
+            <input type="text" name="call_number" placeholder="请输入索书号" value="${info.call_number}"   class="layui-input">
         </div>
     </div>
 
