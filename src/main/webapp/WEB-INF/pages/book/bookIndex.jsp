@@ -23,7 +23,7 @@
 
         <div class="demoTable">
             <div class="layui-form-item layui-form ">
-                图书编号：
+                图书编号ISBN：
                 <div class="layui-inline">
                     <input class="layui-input" name="isbn" id="isbn" autocomplete="off">
                 </div>
@@ -93,7 +93,7 @@
             cols: [[
                 {type: "checkbox", width: 50},
                 //{field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'isbn', width: 100, title: '图书编号'},
+                {field: 'isbn', width: 100, title: '图书编号ISBN'},
                 {field: 'name', width: 100, title: '图书名称'},
                 {templet:'<div>{{d.typeInfo.name}}</div>',width:100,title:'图书类型'},
                 {field: 'author', width: 80, title: '作者'},

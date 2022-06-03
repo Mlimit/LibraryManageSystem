@@ -59,7 +59,7 @@
             ,cols: [[
                 {type: "checkbox", width: 50},
                 //{field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'isbn', width: 150, title: '图书编号'},
+                {field: 'isbn', width: 150, title: '图书编号ISBN'},
                 //获取对象中的属性 对象
                 {templet:'<div>{{d.typeInfo.name}}</div>', width: 80, title: '图书类型'},
                 {field: 'name', width: 80, title: '图书名称'},

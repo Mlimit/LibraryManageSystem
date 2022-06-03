@@ -26,9 +26,9 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label required">图书编号</label>
+        <label class="layui-form-label required">图书编号ISBN</label>
         <div class="layui-input-block">
-            <input type="text" name="isbn" lay-verify="required" lay-reqtext="图书编号不能为空" placeholder="请输入图书编号" autocomplete="off" class="layui-input">
+            <input type="text" name="isbn" lay-verify="required" lay-reqtext="图书编号ISBN不能为空" placeholder="请输入图书编号ISBN" autocomplete="off" class="layui-input">
         </div>
     </div>
 
