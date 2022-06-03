@@ -97,18 +97,24 @@ public class LendListController {
             return DataInfo.fail("学号信息不存在");
         }else{
             ReaderInfo readerCard2=pageInfo.getList().get(0);
-            //可借书
             for(String bid:list) {
-                LendList lendList = new LendList();
-                lendList.setReaderId(readerCard2.getId());//读者id
-                lendList.setBookId(Integer.valueOf(bid));//书的id
-                lendList.setLendDate(new Date());
-                lendListService.addLendListSubmit(lendList);
-                //更变书的状态
-                BookInfo info = bookInfoService.queryBookInfoById(Integer.valueOf(bid));
-                //设置书的状态
-                info.setStatus(1);
-                bookInfoService.updateBookSubmit(info);
+                BookInfo bookInfo = bookInfoService.queryBookInfoById(Integer.valueOf(bid));
+                if(bookInfo.getStock() > 0 && bookInfo.getStatus() == 1){//可借阅
+                    LendList lendList = new LendList();
+                    lendList.setReaderId(readerCard2.getId());//读者id
+                    lendList.setBookId(Integer.valueOf(bid));//书的id
+                    lendList.setLendDate(new Date());
+                    lendListService.addLendListSubmit(lendList);
+                    int stock = bookInfo.getStock();
+                    bookInfo.setStock(--stock);//图书借出，库存-1
+                    bookInfo.setStatus(0);//改为已借出(不可借阅)
+                    bookInfoService.updateBookSubmit(bookInfo);
+                    bookInfoService.updateBookStockByIsbn(bookInfo);//更改所有同isbn的书籍库存
+                } else if (bookInfo.getStock() == 0) {//已无库存
+                    return DataInfo.fail("该书已无库存！");
+                } else if (bookInfo.getStatus() == 0) {//已被借走
+                    return DataInfo.fail("该书已被借阅！");
+                }
             }
 
         }

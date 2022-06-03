@@ -49,4 +49,14 @@ public class BookInfoServiceImpl implements BookInfoService {
     public List<BookInfo> getBookCountByType() {
         return bookInfoMapper.getBookCountByType();
     }
+
+    /**
+     * 修改同isbn书籍的库存
+     * @param bookInfo
+     * @return
+     */
+    @Override
+    public void updateBookStockByIsbn(BookInfo bookInfo) {
+        bookInfoMapper.updateBookStockByIsbn(bookInfo);
+    }
 }

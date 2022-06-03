@@ -68,5 +68,5 @@ public interface BookInfoMapper {
      * @param bookInfo
      * @return
      */
-    int updateBookStockByIsbn(BookInfo bookInfo);
+    void updateBookStockByIsbn(BookInfo bookInfo);
 }

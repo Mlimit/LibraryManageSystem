@@ -66,6 +66,13 @@
                 {field: 'author', width: 80, title: '作者'},
                 {field: 'price', width: 80, title: '价格'},
                 {field: 'stock', width: 80, title: '库存'},
+                {title:"图书状态",width: 100,align: "center",templet:function(res){
+                        if(res.status=='1'){
+                            return '<span class="layui-badge layui-bg-blue">可借阅</span>'
+                        }else if(res.status=='0'){
+                            return '<span class="layui-badge layui-bg-red">已被借阅!</span>'
+                        }
+                    }},
             ]]
             ,id: 'testReload'
             ,height: 310,

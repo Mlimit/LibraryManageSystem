@@ -40,12 +40,6 @@ public class LendListServiceImpl implements LendListService {
     @Override
     public void addLendListSubmit(LendList lendList) {
         lendListMapper.insert(lendList);
-        //修改图书库存
-        BookInfo bookInfo = bookInfoMapper.selectByPrimaryKey(lendList.getBookId());
-        int stock = bookInfo.getStock();
-        bookInfo.setStock(--stock);//图书借出，库存-1
-        bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
-        bookInfoMapper.updateByPrimaryKey(bookInfo);
     }
 
 
