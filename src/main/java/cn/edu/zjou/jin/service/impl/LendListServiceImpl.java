@@ -1,5 +1,6 @@
 package cn.edu.zjou.jin.service.impl;
 
+import cn.edu.zjou.jin.codeutil.DateUtil;
 import cn.edu.zjou.jin.service.LendListService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -79,8 +80,14 @@ public class LendListServiceImpl implements LendListService {
             //根据id查询借阅记录信息
             LendList lendList=new LendList();
             lendList.setId(Integer.parseInt(id));
+            LendList lendList1 = lendListMapper.selectByPrimaryKey(Integer.parseInt(id));
             lendList.setBackDate(new Date());
             lendList.setBackType(0);//正常还书
+            if (lendList1.getBackType() == null) {
+                lendList.setLendDays(DateUtil.dateCompute(lendList1.getLendDate(), new Date()));
+            }else{
+                lendList.setLendDays(DateUtil.dateCompute(lendList1.getLendDate(),lendList1.getBackDate()));
+            }
             lendListMapper.updateLendListSubmit(lendList);//如果用updatePrimarykey会默认很多赋值为空
         }
         //修改书的状态
@@ -126,6 +133,24 @@ public class LendListServiceImpl implements LendListService {
     @Override
     public List<LendList> queryLookBookList(Integer rid, Integer bid) {
         return lendListMapper.queryLookBookList(rid, bid);
+    }
+
+    /**
+     * 更新已被借阅天数
+     *
+     * @param lendList
+     */
+    @Override
+    public void updateLendDays(LendList lendList){
+        List<LendList> list = lendListMapper.queryLendListAll(lendList);
+        int days;
+        for (LendList lendlist : list) {
+            if (lendlist.getBackType() == null) {
+                days = DateUtil.dateCompute(lendlist.getLendDate(), new Date());
+                lendlist.setLendDays(++days);
+            }
+            lendListMapper.updateByPrimaryKey(lendlist);
+        }
     }
 
 }

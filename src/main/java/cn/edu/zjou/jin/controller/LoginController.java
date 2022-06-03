@@ -3,7 +3,9 @@ package cn.edu.zjou.jin.controller;
 import cn.edu.zjou.jin.codeutil.IVerifyCodeGen;
 import cn.edu.zjou.jin.codeutil.SimpleCharVerifyCodeGenImpl;
 import cn.edu.zjou.jin.codeutil.VerifyCode;
+import cn.edu.zjou.jin.po.LendList;
 import cn.edu.zjou.jin.service.AdminService;
+import cn.edu.zjou.jin.service.LendListService;
 import cn.edu.zjou.jin.service.ReaderInfoService;
 import cn.edu.zjou.jin.po.Admin;
 import cn.edu.zjou.jin.po.ReaderInfo;
@@ -25,6 +27,8 @@ public class LoginController {
     private AdminService adminService;
     @Autowired
     private ReaderInfoService readerService;
+    @Autowired
+    private LendListService lendListService;
     /**
      * 登录页面的转发
      */
@@ -101,6 +105,7 @@ public class LoginController {
                 session.setAttribute("type","reader");
             }
 
+            lendListService.updateLendDays(new LendList());
             return "index";
         }
     }

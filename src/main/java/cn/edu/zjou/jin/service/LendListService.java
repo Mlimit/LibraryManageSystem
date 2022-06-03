@@ -42,4 +42,9 @@ public interface LendListService {
      * 时间线查询
      */
     List<LendList> queryLookBookList(Integer rid, Integer bid);
+
+    /**
+     * 更新已被借阅天数
+     */
+    void updateLendDays(LendList lendList);
 }
