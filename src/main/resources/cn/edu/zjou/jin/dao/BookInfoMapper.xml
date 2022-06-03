@@ -235,4 +235,10 @@
     GROUP BY
 	    book.type_id
   </select>
+
+  <update id="updateBookStockByIsbn" parameterType="cn.edu.zjou.jin.po.BookInfo">
+    update book_info
+    set stock = #{stock,jdbcType=INTEGER}
+    where isbn = #{isbn,jdbcType=VARCHAR}
+  </update>
 </mapper>

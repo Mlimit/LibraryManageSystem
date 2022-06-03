@@ -32,12 +32,25 @@ public class LendListServiceImpl implements LendListService {
         return pageInfo;
     }
 
+    /**
+     * 借书，添加借书记录
+     * @param lendList
+     */
     @Override
     public void addLendListSubmit(LendList lendList) {
         lendListMapper.insert(lendList);
+        //修改图书库存
+        BookInfo bookInfo = bookInfoMapper.selectByPrimaryKey(lendList.getBookId());
+        int stock = bookInfo.getStock();
+        bookInfo.setStock(--stock);//图书借出，库存-1
+        bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
+        bookInfoMapper.updateByPrimaryKey(bookInfo);
     }
 
 
+    /**
+     * 删除
+     */
     @Override
     public void deleteLendListById(List<String> ids, List<String> bookIds) {
 
@@ -49,11 +62,17 @@ public class LendListServiceImpl implements LendListService {
         for(String bid:bookIds){
             //根据id查询图书记录信息
             BookInfo bookInfo=bookInfoMapper.selectByPrimaryKey(Integer.parseInt(bid));
-            bookInfo.setStatus(0);//该为未借出
+            int stock = bookInfo.getStock();
+            bookInfo.setStock(++stock);//库存+1
+            bookInfo.setStatus(0);//改为未借出
+            bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
             bookInfoMapper.updateByPrimaryKey(bookInfo);
         }
     }
 
+    /**
+     * 还书
+     */
     @Override
     public void updateLendListSubmit(List<String> ids, List<String> bookIds) {
         for(String id:ids){
@@ -69,11 +88,17 @@ public class LendListServiceImpl implements LendListService {
         for(String bid:bookIds){
             //根据id查询图书记录信息
             BookInfo bookInfo=bookInfoMapper.selectByPrimaryKey(Integer.parseInt(bid));
-            bookInfo.setStatus(0);//该为未借出
+            int stock = bookInfo.getStock();
+            bookInfo.setStock(++stock);//图书归还，库存+1
+            bookInfo.setStatus(0);//改为未借出
+            bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
             bookInfoMapper.updateByPrimaryKey(bookInfo);
         }
     }
 
+    /**
+     * 异常还书
+     */
     @Override
     public void backBook(LendList lendList) {
         LendList lend=new LendList();
@@ -86,12 +111,18 @@ public class LendListServiceImpl implements LendListService {
         //判断异常还书 如果是延期或者正常还书，需要更改书的状态
         if(lend.getBackType()==0 || lend.getBackType()==1){
             BookInfo bookInfo=bookInfoMapper.selectByPrimaryKey(lend.getBookId());
-            bookInfo.setStatus(0);//该为未借出
+            int stock = bookInfo.getStock();
+            bookInfo.setStock(--stock);
+            bookInfo.setStatus(0);//改为未借出
+            bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
             bookInfoMapper.updateByPrimaryKey(bookInfo);
         }
 
     }
 
+    /**
+     * 时间线查询
+     */
     @Override
     public List<LendList> queryLookBookList(Integer rid, Integer bid) {
         return lendListMapper.queryLookBookList(rid, bid);

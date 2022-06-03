@@ -62,4 +62,11 @@ public interface BookInfoMapper {
      * 根据类型获取图书数量
      */
     List<BookInfo> getBookCountByType();
+
+    /**
+     * 修改同isbn书籍的库存
+     * @param bookInfo
+     * @return
+     */
+    int updateBookStockByIsbn(BookInfo bookInfo);
 }

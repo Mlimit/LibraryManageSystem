@@ -7,10 +7,19 @@ import java.util.List;
 
 public interface LendListService {
 
-    //分页查询
+    /**
+     * 分页查询
+     * @param lendList
+     * @param page
+     * @param limit
+     * @return
+     */
     PageInfo<LendList> queryLendListAll(LendList lendList, int page, int limit);
 
-    //添加借阅记录
+    /**
+     * 借书，添加借书记录
+     * @param lendList
+     */
     void addLendListSubmit(LendList lendList);
 
 
