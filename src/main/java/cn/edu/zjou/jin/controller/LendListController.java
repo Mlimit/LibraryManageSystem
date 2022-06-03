@@ -99,7 +99,7 @@ public class LendListController {
             ReaderInfo readerCard2=pageInfo.getList().get(0);
             for(String bid:list) {
                 BookInfo bookInfo = bookInfoService.queryBookInfoById(Integer.valueOf(bid));
-                if(bookInfo.getStock() > 0 && bookInfo.getStatus() == 1){//可借阅
+                if (bookInfo.getStock() > 0 && bookInfo.getStatus() == 1 && readerCard2.getStatus() == 1) {//可借阅
                     LendList lendList = new LendList();
                     lendList.setReaderId(readerCard2.getId());//读者id
                     lendList.setBookId(Integer.valueOf(bid));//书的id
@@ -114,6 +114,8 @@ public class LendListController {
                     return DataInfo.fail("该书已无库存！");
                 } else if (bookInfo.getStatus() == 0) {//已被借走
                     return DataInfo.fail("该书已被借阅！");
+                } else if(readerCard2.getStatus()==0){
+                    return DataInfo.fail("您有超期图书未归还,请归还后再进行借阅！");
                 }
             }
 
