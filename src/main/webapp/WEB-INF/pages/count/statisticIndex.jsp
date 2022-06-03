@@ -37,21 +37,34 @@
 
             // 指定图表的配置项和数据
             var option = {
+                title: {
+                    text: '读者最爱类别',
+                    subtext: 'Reader Favorite Categories',
+                    left: 'center',
+                    top: '5%'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: '75%',
+                    top: '75%'
+                },
                 series : [
                     {
-                        name: '访问来源',
                         type: 'pie',
-                        radius: '55%',
+                        radius: '50%',
                         data:[
                             <c:forEach items="${list}" var="type">
                             {value:${type.counts}, name:'${type.name}'},
                             </c:forEach>
                             ,0
                         ],
-                        roseType: 'angle',
-                        itemStyle: {
-                            normal: {
-                                shadowBlur: 200,
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
                                 shadowColor: 'rgba(0, 0, 0, 0.5)'
                             }
                         }
