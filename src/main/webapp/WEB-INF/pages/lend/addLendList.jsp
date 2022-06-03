@@ -65,7 +65,7 @@
                 {field: 'name', width: 80, title: '图书名称'},
                 {field: 'author', width: 80, title: '作者'},
                 {field: 'price', width: 80, title: '价格'},
-                {field: 'language', width: 80, title: '语言'},
+                {field: 'stock', width: 80, title: '库存'},
             ]]
             ,id: 'testReload'
             ,height: 310,

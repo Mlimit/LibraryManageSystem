@@ -98,7 +98,7 @@
                 {templet:'<div>{{d.typeInfo.name}}</div>',width:100,title:'图书类型'},
                 {field: 'author', width: 80, title: '作者'},
                 {field: 'price', width: 80, title: '价格'},
-                {field: 'language', width: 80, title: '语言'},
+                {field: 'stock', width: 80, title: '库存'},
                 {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],

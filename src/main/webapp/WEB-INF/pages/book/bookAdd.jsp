@@ -56,9 +56,9 @@
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label required">图书语言</label>
+        <label class="layui-form-label required">库存</label>
         <div class="layui-input-block">
-            <input type="text" name="language" autocomplete="off"  class="layui-input">
+            <input type="text" name="stock" autocomplete="off"  class="layui-input">
         </div>
     </div>
 
