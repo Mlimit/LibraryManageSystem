@@ -208,4 +208,7 @@
   <select id="queryUserInfoByNameAndPassword" resultType="cn.edu.zjou.jin.po.ReaderInfo">
     select * from reader_info where username=#{username} and password=#{password}
   </select>
+  <select id="selectByUsername" resultType="cn.edu.zjou.jin.po.ReaderInfo">
+    select * from reader_info where username=#{username}
+  </select>
 </mapper>

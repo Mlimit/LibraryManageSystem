@@ -58,11 +58,15 @@ public class ReaderInfoController {
     @RequestMapping("/addReaderSubmit")
     @ResponseBody
     public DataInfo addReaderSubmit(@RequestBody ReaderInfo readerInfo){
-        readerInfo.setPassword("123456");//设置默认密码
-        readerInfo.setRegisterDate(new Date());
-        readerInfo.setStatus(1);
-        readerInfoService.addReaderInfoSubmit(readerInfo);
-        return DataInfo.ok();
+        if (readerInfoService.queryReaderInfoByUsername(readerInfo.getUsername())!=null) {
+            return DataInfo.fail("学号已存在，请输入正确的学号！");
+        }else{
+            readerInfo.setPassword("123456");//设置默认密码
+            readerInfo.setRegisterDate(new Date());
+            readerInfo.setStatus(1);
+            readerInfoService.addReaderInfoSubmit(readerInfo);
+            return DataInfo.ok();
+        }
     }
 
     /**
@@ -81,8 +85,12 @@ public class ReaderInfoController {
     @RequestMapping("/updateReaderSubmit")
     @ResponseBody
     public DataInfo updateReaderSubmit(@RequestBody ReaderInfo readerInfo){
-        readerInfoService.updateReaderInfoSubmit(readerInfo);
-        return DataInfo.ok();
+        if (readerInfoService.queryReaderInfoByUsername(readerInfo.getUsername())!=null) {
+            return DataInfo.fail("学号已存在，请输入正确的学号！");
+        }else{
+            readerInfoService.updateReaderInfoSubmit(readerInfo);
+            return DataInfo.ok();
+        }
     }
 
     /**

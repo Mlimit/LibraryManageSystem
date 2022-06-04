@@ -38,6 +38,15 @@ public class ReaderInfoServiceImpl implements ReaderInfoService {
         return readerInfoMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 查询学号是否已存在（修改前先查询）
+     * @param username
+     */
+    @Override
+    public ReaderInfo queryReaderInfoByUsername(String username) {
+        return readerInfoMapper.selectByUsername(username);
+    }
+
     @Override
     public void updateReaderInfoSubmit(ReaderInfo readerInfo) {
         readerInfoMapper.updateByPrimaryKeySelective(readerInfo);

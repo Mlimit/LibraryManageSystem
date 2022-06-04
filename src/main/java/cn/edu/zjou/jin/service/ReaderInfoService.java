@@ -23,6 +23,11 @@ public interface ReaderInfoService {
     ReaderInfo queryReaderInfoById(Integer id);
 
     /**
+     * 查询学号是否已存在（修改前先查询）
+     */
+    ReaderInfo queryReaderInfoByUsername(String username);
+
+    /**
      * 修改提交
      */
     void updateReaderInfoSubmit(ReaderInfo readerInfo);

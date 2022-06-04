@@ -52,6 +52,13 @@
     </div>
 
     <div class="layui-form-item">
+        <label class="layui-form-label required">入学日期</label>
+        <div class="layui-input-block">
+            <input type="text" name="registerDate" id="registerDate" lay-verify="required"  value="<fmt:formatDate value='${info.registerDate}' pattern='yyyy-MM-dd'/>" class="layui-input" autocomplete="off">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
         <label class="layui-form-label required">联系方式</label>
         <div class="layui-input-block">
             <input type="text" name="tel" lay-verify="required"  class="layui-input" value="${info.tel}" autocomplete="off">
@@ -82,6 +89,10 @@
         //日期
         laydate.render({
             elem: '#date',
+            trigger:'click'
+        });
+        laydate.render({
+            elem: '#registerDate',
             trigger:'click'
         });
 
