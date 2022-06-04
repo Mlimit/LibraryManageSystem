@@ -126,4 +126,12 @@ public class ReaderInfoController {
         }
         return DataInfo.ok();
     }
+
+    /**
+     * 跳转个人信息修改页面
+     */
+    @GetMapping("/updateProfile")
+    public String updateProfile(){
+        return "reader/updateProfile";
+    }
 }

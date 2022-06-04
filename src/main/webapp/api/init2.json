@@ -16,15 +16,21 @@
       "target": "_self",
       "child": [
           {
-              "title": "公告管理",
+              "title": "公告查看",
               "href": "noticeIndexOfReader",
               "icon": "fa fa-window-maximize",
               "target": "_self"
           },
           {
-            "title": "借阅管理",
+            "title": "借阅记录",
             "href": "queryLookBookList2",
             "icon": "fa fa-gears",
+            "target": "_self"
+          },
+          {
+            "title": "个人信息",
+            "href": "updateProfile",
+            "icon": "fa fa-user",
             "target": "_self"
           }
       ]

@@ -40,7 +40,7 @@ public class ReaderInfoServiceImpl implements ReaderInfoService {
 
     @Override
     public void updateReaderInfoSubmit(ReaderInfo readerInfo) {
-        readerInfoMapper.updateByPrimaryKey(readerInfo);
+        readerInfoMapper.updateByPrimaryKeySelective(readerInfo);
     }
 
     @Override
