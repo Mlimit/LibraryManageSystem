@@ -60,13 +60,13 @@
                 icon: 'layui-icon-tips'
             }],
             cols: [[
-                {type: "checkbox", width: 50},
-                //{field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'topic', width: 150, title: '公告主题'},
-                {field: 'content', width: 200, title: '公告内容'},
-                {field: 'author', width: 100, title: '发布者'},
-                {templet:"<div>{{layui.util.toDateString(d.createDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 200, title: '发布时间'},
-                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                {type: "checkbox", width: 50, align: 'center'},
+                {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
+                {field: 'topic', width: 150, title: '公告主题', align: 'center'},
+                {field: 'content', width: 200, title: '公告内容', align: 'center'},
+                {field: 'author', width: 100, title: '发布者', align: 'center'},
+                {templet:"<div>{{layui.util.toDateString(d.createDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 200, title: '发布时间', align: 'center'},
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: 'center'}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,  <!--默认显示15条-->

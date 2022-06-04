@@ -70,22 +70,22 @@
                 icon: 'layui-icon-tips'
             }],
             cols: [[
-                {type: "checkbox", width: 50},
-                //{field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'username', width: 100, title: '用户名'},
-                {field: 'realName', width: 100, title: '真实姓名'},
-                {field: 'sex', width: 80, title: '性别'},
-                {field: 'tel', width: 150, title: '电话'},
-                {templet:"<div>{{layui.util.toDateString(d.registerDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 200, title: '入学时间'},
-                {templet: '<div>{{d.email}}</div>', width: 150, title: '邮箱'},
-                {title:"读者状态",minWidth: 120,templet:function(res){
+                {type: "checkbox", width: 50, align: 'center'},
+                {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
+                {field: 'username', width: 100, title: '学号', align: 'center'},
+                {field: 'realName', width: 100, title: '真实姓名', align: 'center'},
+                {field: 'sex', width: 80, title: '性别', align: 'center'},
+                {field: 'tel', width: 150, title: '电话', align: 'center'},
+                {templet:"<div>{{layui.util.toDateString(d.registerDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 200, title: '入学时间', align: 'center'},
+                {templet: '<div>{{d.email}}</div>', width: 150, title: '邮箱', align: 'center'},
+                {title: "读者状态", align: 'center', minWidth: 120, templet: function (res) {
                         if(res.status=='1'){
                             return '<span class="layui-badge layui-bg-green">正常借阅</span>'
                         }else if(res.status=='0'){
                             return '<span class="layui-badge layui-bg-red">不可借阅!</span>'
                         }
                     }},
-                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: 'center'}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,  <!--默认显示15条-->

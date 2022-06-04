@@ -70,17 +70,17 @@
                 icon: 'layui-icon-tips'
             }],
             cols: [[
-                {type: "checkbox", width: 50},
-                //{field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'username', width: 150, title: '用户名'},
-                {field: 'adminType', width: 200, title: '管理员类型',templet:function (res) {
+                {type: "checkbox", width: 50, align: 'center'},
+                {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
+                {field: 'username', width: 150, title: '用户名', align: 'center'},
+                {field: 'adminType', width: 200, align: 'center', title: '管理员类型',templet:function (res) {
                         if (res.adminType == '0'){
                             return '<span class="layui-btn layui-btn-normal layui-btn-xs">普通管理员</span>';
                         }else{
                             return '<span class="layui-btn layui-btn-normal layui-btn-xs" style="background-color: orangered;">高级管理员</span>';
                         }
                     }},
-                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: 'center'}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,  <!--默认显示15条-->

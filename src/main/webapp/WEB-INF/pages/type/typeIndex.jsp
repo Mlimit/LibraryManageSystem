@@ -61,10 +61,10 @@
             }],
             cols: [[
                 {type: "checkbox", width: 50},
-                //{field: 'id', width: 100, title: 'ID', sort: true},
+                {field: 'id', width: 100, title: '序号', sort: true},
                 {field: 'name', width: 180, title: '类型名称'},
                 {field: 'remarks', width: 280, title: '备注'},
-                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: 'center'}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,  <!--默认显示15条-->

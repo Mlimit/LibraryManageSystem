@@ -108,7 +108,6 @@
     <div class="layuimini-site-mobile"><i class="layui-icon"></i></div>
 
     <div class="layui-body">
-
         <div class="layuimini-tab layui-tab-rollTool layui-tab" lay-filter="layuiminiTab" lay-allowclose="true">
             <ul class="layui-tab-title">
                 <li class="layui-this" id="layuiminiHomeTabId" lay-id=""></li>
@@ -121,9 +120,9 @@
                         <li class="layui-nav-item">
                             <a href="javascript:;"><span class="layui-nav-more"></span></a>
                             <dl class="layui-nav-child">
-                                <dd><a href="javascript:;" layuimini-tab-close="current">关 闭 当 前</a></dd>
-                                <dd><a href="javascript:;" layuimini-tab-close="other">关 闭 其 他</a></dd>
-                                <dd><a href="javascript:;" layuimini-tab-close="all">关 闭 全 部</a></dd>
+                                <dd><a href="javascript:;" layuimini-tab-close="current"><i class="fa fa-close"></i> 关闭当前</a></dd>
+                                <dd><a href="javascript:;" layuimini-tab-close="other"><i class="fa fa-window-close"></i> 关闭其他</a></dd>
+                                <dd><a href="javascript:;" layuimini-tab-close="all"><i class="fa fa-window-close-o"></i> 关闭全部</a></dd>
                             </dl>
                         </li>
                     </ul>
@@ -133,7 +132,20 @@
                 <div id="layuiminiHomeTabIframe" class="layui-tab-item layui-show"></div>
             </div>
         </div>
+    </div>
 
+    <!-- 底部固定区域 -->
+    <div class="layui-footer footer">
+        <div id="wxImg" style="display:none;position: fixed;  height:50px;back-ground:#f00;position:fixed; bottom: 157px; left: 310px;"><img src="images/wx.jpg" style="width: 37%;"/> </div>
+        <div id="qqImg" style="display:none;position: fixed;  height:50px;back-ground:#f00;position:fixed; bottom: 230px; left: 343px;"><img src="images/qq.jpg" style="width: 30%;"/> </div>
+        <span>© 2019 Copyright liuhao </span>&nbsp;&nbsp;
+        <a href="javascript:void(0)" onMouseOut="hideImg('wx')" onmouseover="showImg('wx')"> <i class="fa fa-weixin " aria-hidden="true"></i> </a>&nbsp;&nbsp;
+        <a href="javascript:void(0)" onMouseOut="hideImg('qq')" onmouseover="showImg('qq')"> <i class="fa fa-qq " aria-hidden="true"></i> </a>&nbsp;&nbsp;
+        <a href="https://weibo.com/u/6031667969" target="_blank"> <i class="fa fa-weibo " aria-hidden="true"></i> </a>&nbsp;&nbsp;
+        <a href="https://space.bilibili.com/276515997?from=search&seid=15759104698329070231" target="_blank"> <img src="images/bilibili.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
+        <a href="https://blog.csdn.net/Fly_1213" target="_blank"> <img src="images/csdn.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
+        <a href="https://github.com/fly-liuhao" target="_blank"> <img src="images/github.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
+        <a href="https://gitee.com/fly-liuhao" target="_blank"> <img src="images/gitee.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
     </div>
 </div>
 <script src="${pageContext.request.contextPath}/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>

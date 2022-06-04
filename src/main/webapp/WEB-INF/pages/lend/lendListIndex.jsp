@@ -87,18 +87,18 @@
                 icon: 'layui-icon-tips'
             }],
             cols: [[
-                {type: "checkbox", width: 50},
-                {field: 'id', width: 100, title: 'ID', sort: true},
-                {field: 'bookId', width: 120, title: '图书编号'},
+                {type: "checkbox", width: 50, align: 'center'},
+                {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
+                {field: 'bookId', width: 120, title: '图书编号', align: 'center'},
                 {templet: '<div><a href="javascript:void(0)" style="color:#00b7ee" lay-event="bookInfoEvent">{{d.bookInfo.name}}</a></div>',
-                    width: 100, title: '图书名称'},
-                {templet: '<div>{{d.readerInfo.username}}</div>', width: 120, title: '学号'},
+                    width: 180, title: '图书名称', align: 'center'},
+                {templet: '<div>{{d.readerInfo.username}}</div>', width: 120, title: '学号', align: 'center'},
                 {templet: '<div><a href="javascript:void(0)" style="color:#00b7ee" lay-event="readerInfoEvent">{{d.readerInfo.realName}}</a></div>',
-                    width: 100, title: '借阅人'},
+                    width: 100, title: '借阅人', align: 'center'},
                 // {templet: '<div>{{d.reader.name}}</div>', width: 80, title: '借阅人'},
-                {templet:"<div>{{layui.util.toDateString(d.lendDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 160, title: '借阅时间'},
-                {field: 'backDate', width: 160, title: '还书时间'},
-                {title:"还书类型",minWidth: 120,templet:function(res){
+                {templet:"<div>{{layui.util.toDateString(d.lendDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 160, title: '借阅时间', align: 'center'},
+                {field: 'backDate', width: 160, title: '还书时间', align: 'center'},
+                {title:"还书类型",minWidth: 120, align: 'center',templet:function(res){
                       if(res.backType=='0'){
                           return '<span class="layui-badge layui-bg-green">正常还书</span>'
                       }else if(res.backType=='1'){
@@ -112,7 +112,7 @@
                           return '<span class="layui-badge layui-bg-blue">在借中</span>'
                       }
                     }},
-                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: 'center'}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
