@@ -39,8 +39,8 @@ public class ReaderInfoController {
      */
     @RequestMapping("/readerAll")
     @ResponseBody
-    public DataInfo queryReaderAll(ReaderInfo readerInfo, @RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "15") Integer limit){
-        PageInfo<ReaderInfo> pageInfo = readerInfoService.queryAllReaderInfo(readerInfo,pageNum,limit);
+    public DataInfo queryReaderAll(ReaderInfo readerInfo, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "15") Integer limit){
+        PageInfo<ReaderInfo> pageInfo = readerInfoService.queryAllReaderInfo(readerInfo,page,limit);
         return DataInfo.ok("成功",pageInfo.getTotal(),pageInfo.getList());
     }
 
@@ -85,12 +85,8 @@ public class ReaderInfoController {
     @RequestMapping("/updateReaderSubmit")
     @ResponseBody
     public DataInfo updateReaderSubmit(@RequestBody ReaderInfo readerInfo){
-        if (readerInfoService.queryReaderInfoByUsername(readerInfo.getUsername())!=null) {
-            return DataInfo.fail("学号已存在，请输入正确的学号！");
-        }else{
-            readerInfoService.updateReaderInfoSubmit(readerInfo);
-            return DataInfo.ok();
-        }
+        readerInfoService.updateReaderInfoSubmit(readerInfo);
+        return DataInfo.ok();
     }
 
     /**

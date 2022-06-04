@@ -28,8 +28,8 @@ public class AdminController {
 
     @RequestMapping("/adminAll")
     @ResponseBody
-    public DataInfo queryAdminAll(Admin admin, @RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "15") Integer limit){
-        PageInfo<Admin> pageInfo = adminService.queryAdminAll(admin,pageNum,limit);
+    public DataInfo queryAdminAll(Admin admin, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "15") Integer limit){
+        PageInfo<Admin> pageInfo = adminService.queryAdminAll(admin,page,limit);
         return DataInfo.ok("成功",pageInfo.getTotal(),pageInfo.getList());
     }
 
