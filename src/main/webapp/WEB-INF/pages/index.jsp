@@ -96,10 +96,10 @@
     <div class="layui-side layui-bg-black layuimini-menu-left">
     </div>
 
-    <!--初始化加载层-->
-    <div class="layuimini-loader">
-        <div class="layuimini-loader-inner"></div>
-    </div>
+    <!--初始化加载层(就是登录后转一会圈圈然后再进入首页的样式)-->
+<%--    <div class="layuimini-loader">--%>
+<%--        <div class="layuimini-loader-inner"></div>--%>
+<%--    </div>--%>
 
     <!--手机端遮罩层-->
     <div class="layuimini-make"></div>
