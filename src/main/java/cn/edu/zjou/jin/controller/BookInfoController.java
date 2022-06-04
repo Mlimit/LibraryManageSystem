@@ -33,6 +33,15 @@ public class BookInfoController {
     }
 
     /**
+     * 读者查询图书首页
+     * @return
+     */
+    @GetMapping("/bookIndexOfReader")
+    public String bookIndexOfReader(){
+        return "book/bookIndexOfReader";
+    }
+
+    /**
      * 获取book信息，封装成json
      * @param bookInfo
      * @param pageNum

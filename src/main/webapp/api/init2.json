@@ -10,21 +10,27 @@
   },
   "menuInfo": [
     {
-      "title": "功能管理",
-      "icon": "fa fa-address-book",
+      "title": "功能列表",
+      "icon": "fa fa-bars",
       "href": "",
       "target": "_self",
       "child": [
           {
-              "title": "公告查看",
-              "href": "noticeIndexOfReader",
-              "icon": "fa fa-window-maximize",
-              "target": "_self"
+            "title": "图书查询",
+            "href": "bookIndexOfReader",
+            "icon": "fa fa-book",
+            "target": "_self"
           },
           {
             "title": "借阅记录",
             "href": "queryLookBookList2",
-            "icon": "fa fa-gears",
+            "icon": "fa fa-history",
+            "target": "_self"
+          },
+          {
+            "title": "公告查看",
+            "href": "noticeIndexOfReader",
+            "icon": "fa fa-bell",
             "target": "_self"
           },
           {
