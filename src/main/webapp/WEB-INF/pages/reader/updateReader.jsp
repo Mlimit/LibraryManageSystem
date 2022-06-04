@@ -117,7 +117,7 @@
                             parent.layer.close(iframeIndex);
                         })
                     }else{
-                        layer.msg("修改失败");
+                        layer.msg(result.msg);
                     }
                 }
             })
