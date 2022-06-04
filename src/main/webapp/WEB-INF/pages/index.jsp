@@ -133,20 +133,6 @@
             </div>
         </div>
     </div>
-
-    <!-- 底部固定区域 -->
-    <div class="layui-footer footer">
-        <div id="wxImg" style="display:none;position: fixed;  height:50px;back-ground:#f00;position:fixed; bottom: 157px; left: 310px;"><img src="images/wx.jpg" style="width: 37%;"/> </div>
-        <div id="qqImg" style="display:none;position: fixed;  height:50px;back-ground:#f00;position:fixed; bottom: 230px; left: 343px;"><img src="images/qq.jpg" style="width: 30%;"/> </div>
-        <span>© 2019 Copyright liuhao </span>&nbsp;&nbsp;
-        <a href="javascript:void(0)" onMouseOut="hideImg('wx')" onmouseover="showImg('wx')"> <i class="fa fa-weixin " aria-hidden="true"></i> </a>&nbsp;&nbsp;
-        <a href="javascript:void(0)" onMouseOut="hideImg('qq')" onmouseover="showImg('qq')"> <i class="fa fa-qq " aria-hidden="true"></i> </a>&nbsp;&nbsp;
-        <a href="https://weibo.com/u/6031667969" target="_blank"> <i class="fa fa-weibo " aria-hidden="true"></i> </a>&nbsp;&nbsp;
-        <a href="https://space.bilibili.com/276515997?from=search&seid=15759104698329070231" target="_blank"> <img src="images/bilibili.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
-        <a href="https://blog.csdn.net/Fly_1213" target="_blank"> <img src="images/csdn.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
-        <a href="https://github.com/fly-liuhao" target="_blank"> <img src="images/github.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
-        <a href="https://gitee.com/fly-liuhao" target="_blank"> <img src="images/gitee.jpg" style="height: 16px; width: 16px;border-radius:50%"/> </a>&nbsp;&nbsp;
-    </div>
 </div>
 <script src="${pageContext.request.contextPath}/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath}/js/lay-config.js?v=2.0.0" charset="utf-8"></script>

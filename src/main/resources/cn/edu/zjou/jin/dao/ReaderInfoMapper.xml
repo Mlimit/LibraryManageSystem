@@ -194,7 +194,7 @@
   <select id="queryAllReaderInfo" resultType="cn.edu.zjou.jin.po.ReaderInfo" parameterType="cn.edu.zjou.jin.po.ReaderInfo">
         select * from reader_info
         <where>
-          <!--用户名-->
+          <!--学号-->
           <if test="username!=null">
             and username like '%${username}%'
           </if>

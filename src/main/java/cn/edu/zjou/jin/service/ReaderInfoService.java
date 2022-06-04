@@ -33,7 +33,7 @@ public interface ReaderInfoService {
     void deleteReaderInfoByIds(List<String> ids);
 
     /**
-     * 根据用户名和密码查询用户信息
+     * 根据学号和密码查询用户信息
      */
     ReaderInfo queryUserInfoByNameAndPassword(String username,String password);
 

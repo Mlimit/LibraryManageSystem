@@ -60,7 +60,7 @@ public interface ReaderInfoMapper {
     List<ReaderInfo> queryAllReaderInfo(ReaderInfo readerInfo);
 
     /**
-     * 根据用户名和密码查询用户信息
+     * 根据学号和密码查询读者信息
      */
     ReaderInfo queryUserInfoByNameAndPassword(@Param("username") String username, @Param("password") String password);
 }

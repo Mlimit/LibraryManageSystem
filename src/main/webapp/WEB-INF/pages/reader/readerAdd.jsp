@@ -20,9 +20,9 @@
 <body>
 <div class="layui-form layuimini-form">
     <div class="layui-form-item">
-        <label class="layui-form-label required">用户名</label>
+        <label class="layui-form-label required">学号</label>
         <div class="layui-input-block">
-            <input type="text" name="username" lay-verify="required" lay-reqtext="用户名不能为空" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            <input type="text" name="username" lay-verify="required" lay-reqtext="学号不能为空" placeholder="请输入学号" autocomplete="off" class="layui-input">
         </div>
     </div>
 

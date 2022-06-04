@@ -23,7 +23,7 @@
 
         <div class="demoTable">
             <div class="layui-form-item layui-form ">
-                用户名：
+                学号：
                 <div class="layui-inline">
                     <input class="layui-input" name="username" id="username" autocomplete="off">
                 </div>
