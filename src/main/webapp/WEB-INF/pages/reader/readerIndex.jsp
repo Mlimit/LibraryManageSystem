@@ -27,7 +27,7 @@
                 <div class="layui-inline">
                     <input class="layui-input" name="username" id="username" autocomplete="off">
                 </div>
-                电话：
+                联系方式：
                 <div class="layui-inline">
                     <input class="layui-input" name="tel" id="tel" autocomplete="off">
                 </div>
@@ -75,7 +75,7 @@
                 {field: 'username', width: 100, title: '学号', align: 'center'},
                 {field: 'realName', width: 100, title: '真实姓名', align: 'center'},
                 {field: 'sex', width: 80, title: '性别', align: 'center'},
-                {field: 'tel', width: 150, title: '电话', align: 'center'},
+                {field: 'tel', width: 150, title: '联系方式', align: 'center'},
                 {templet:"<div>{{layui.util.toDateString(d.registerDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 200, title: '入学时间', align: 'center'},
                 {templet: '<div>{{d.email}}</div>', width: 150, title: '邮箱', align: 'center'},
                 {title: "读者状态", align: 'center', minWidth: 120, templet: function (res) {

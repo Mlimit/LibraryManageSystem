@@ -198,7 +198,7 @@
           <if test="username!=null">
             and username like '%${username}%'
           </if>
-          <!--电话号-->
+          <!--联系方式-->
           <if test="tel!=null">
             and tel like '%${tel}%'
           </if>

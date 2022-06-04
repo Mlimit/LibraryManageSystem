@@ -24,12 +24,12 @@
         <div class="layui-timeline-content layui-text">
             <div class="layui-timeline-title">
                 <fmt:formatDate value="${lend.lendDate}" pattern="yyyy年MM月dd日HH点mm分ss秒" /> <br/>
-                <span style="color: red"> ${lend.readerInfo.realName}</span> 借走 <span style="color: crimson"><<${lend.bookInfo.name}>></span><br/>
+                <span style="color: lightskyblue"> ${lend.readerInfo.realName}</span> 借走 <span style="color: crimson"><<${lend.bookInfo.name}>></span><br/>
                 <c:if test="${lend.backDate == null}">
-                     未归还
+                    <span style="color: red">未归还</span>
                 </c:if>
                 <c:if test="${lend.backDate != null}">
-                    <fmt:formatDate value="${lend.backDate}" pattern="yyyy年MM月dd日HH点mm分ss秒" /> <span style="color: green">归还</span>,
+                    <fmt:formatDate value="${lend.backDate}" pattern="yyyy年MM月dd日HH点mm分ss秒" /> <span style="color: green">归还</span>
                 </c:if>
             </div>
         </div>

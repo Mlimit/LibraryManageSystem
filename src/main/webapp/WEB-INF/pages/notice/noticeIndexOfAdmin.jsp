@@ -103,7 +103,7 @@
             var data=obj.data;
             if (obj.event === 'query') {  // 监听查询详情操作
                 var index = layer.open({
-                    title: '查看公告',
+                    title: '发布公告',
                     type: 2,
                     shade: 0.2,
                     maxmin:true,
