@@ -20,11 +20,11 @@ public class NoticeController {
     private NoticeService noticeService;
 
     /**
-     *  后台公告
+     *  后台公告-管理员
      */
-    @GetMapping("/noticeIndexOfBack")
-    public String noticeIndexOfBack(){
-        return "notice/noticeIndexOfBack";
+    @GetMapping("/noticeIndexOfAdmin")
+    public String noticeIndexOfAdmin(){
+        return "notice/noticeIndexOfAdmin";
     }
     /**
      *  后台公告

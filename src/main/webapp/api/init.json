@@ -41,7 +41,7 @@
           },
           {
               "title": "公告管理",
-              "href": "noticeIndexOfBack",
+              "href": "noticeIndexOfAdmin",
               "icon": "fa fa-bell",
               "target": "_self"
             },
