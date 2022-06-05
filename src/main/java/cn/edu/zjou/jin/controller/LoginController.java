@@ -80,8 +80,8 @@ public class LoginController {
         //判断验证码是否正确（验证码已经放入session）
         HttpSession session = request.getSession();
         String realCode = (String)session.getAttribute("VerifyCode");
-//        if (!realCode.toLowerCase().equals(code.toLowerCase())){
-        if (!code.toLowerCase().equals(code.toLowerCase())){
+        if (!realCode.toLowerCase().equals(code.toLowerCase())){
+//        if (!code.toLowerCase().equals(code.toLowerCase())){//调试的时候取消注释，方便很多
             model.addAttribute("msg","验证码不正确");
             return "login";
         }else{

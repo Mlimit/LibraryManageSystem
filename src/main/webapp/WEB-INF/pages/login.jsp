@@ -48,11 +48,11 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username"></label>
-                    <input type="text" name="username" lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" value="admin">
+                    <input type="text" name="username" lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-password"></label>
-                    <input type="password" name="password" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" value="123456">
+                    <input type="password" name="password" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username"></label>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-inline">
-                        <input type="text" name="captcha" style="width: 200px;" lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input" value="1">
+                        <input type="text" name="captcha" style="width: 200px;" lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-input-inline">
                         <div class="field">
