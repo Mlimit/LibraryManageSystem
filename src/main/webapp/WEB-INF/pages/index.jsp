@@ -72,7 +72,16 @@
                     <a href="javascript:;" data-check-screen="full"><i class="fa fa-arrows-alt"></i></a>
                 </li>
                 <li class="layui-nav-item layuimini-setting">
-                    <a href="javascript:;"><span style="color: #BBBBBB">${sessionScope.user.username}</span></a>
+                    <a href="javascript:;">
+                        <c:choose>
+                        <c:when test="${sessionScope.type eq 'reader'}">
+                            <span style="color: #BBBBBB">${sessionScope.user.realName}</span>
+                        </c:when>
+                        <c:otherwise>
+                            <span style="color: #BBBBBB">${sessionScope.user.username}</span>
+                        </c:otherwise>
+                        </c:choose>
+                    </a>
                     <dl class="layui-nav-child">
                         <dd>
                             <a href="#" layuimini-content-href="${pageContext.request.contextPath}/updatePassword" data-title="修改密码" data-icon="fa fa-gears">修改密码</a>
