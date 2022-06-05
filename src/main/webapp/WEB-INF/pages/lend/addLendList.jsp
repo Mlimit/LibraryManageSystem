@@ -73,10 +73,12 @@
                             return '<span class="layui-badge layui-bg-red">已被借阅!</span>'
                         }
                     }},
-            ]]
-            ,id: 'testReload'
-            ,height: 310,
-             page:false
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 15,  <!--默认显示15条-->
+            page: true,
+            skin: 'line',
+            id:'testReload'
         });
         var $ = layui.$, active = {
             reload: function(){
