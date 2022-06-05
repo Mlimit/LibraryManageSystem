@@ -60,10 +60,10 @@
                 icon: 'layui-icon-tips'
             }],
             cols: [[
-                {type: "checkbox", width: 50},
-                {field: 'id', width: 100, title: '序号', sort: true},
-                {field: 'name', width: 180, title: '类型名称'},
-                {field: 'remarks', width: 280, title: '备注'},
+                {type: "checkbox", width: 50, align: 'center'},
+                {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
+                {field: 'name', width: 180, title: '类型名称', align: 'center'},
+                {field: 'remarks', minWidth: 280, title: '备注', align: 'center'},
                 {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: 'center'}
             ]],
             limits: [10, 15, 20, 25, 50, 100],

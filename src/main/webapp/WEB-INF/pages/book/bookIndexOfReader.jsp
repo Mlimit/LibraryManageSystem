@@ -80,13 +80,13 @@
       }],
       cols: [[
         {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
-        {field: 'isbn', width: 130, title: '图书编号ISBN', align: 'center'},
-        {field: 'name', width: 180, title: '图书名称', align: 'center'},
-        {field: 'call_number', width: 150, title: '索书号', align: 'center'},
-        {templet:'<div>{{d.typeInfo.name}}</div>',width:100,title:'图书类型', align: 'center'},
-        {field: 'author', width: 130, title: '作者', align: 'center'},
-        {field: 'price', width: 80, title: '价格', align: 'center'},
-        {field: 'stock', width: 80, title: '库存', align: 'center'}
+        {field: 'isbn', minWidth: 130, title: '图书编号ISBN', align: 'center'},
+        {field: 'name', minWidth: 180, title: '图书名称', align: 'center'},
+        {field: 'call_number', minWidth: 150, title: '索书号', align: 'center'},
+        {templet:'<div>{{d.typeInfo.name}}</div>',minWidth:100,title:'图书类型', align: 'center'},
+        {field: 'author', minWidth: 130, title: '作者', align: 'center'},
+        {field: 'price', minWidth: 80, title: '价格', align: 'center'},
+        {field: 'stock', minWidth: 80, title: '库存', align: 'center'}
       ]],
       limits: [10, 15, 20, 25, 50, 100],
       limit: 15,  <!--默认显示15条-->

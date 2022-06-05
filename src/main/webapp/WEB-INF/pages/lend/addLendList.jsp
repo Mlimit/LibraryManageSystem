@@ -58,15 +58,15 @@
             ,url: '${pageContext.request.contextPath}/bookAll'
             ,cols: [[
                 {type: "checkbox", width: 50, align: 'center'},
-                //{field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
-                {field: 'isbn', width: 150, title: '图书编号ISBN', align: 'center'},
+                {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
+                {field: 'isbn', miniWidth: 150, title: '图书编号ISBN', align: 'center'},
                 //获取对象中的属性 对象
-                {templet:'<div>{{d.typeInfo.name}}</div>', width: 80, title: '图书类型', align: 'center'},
-                {field: 'name', width: 180, title: '图书名称', align: 'center'},
-                {field: 'author', width: 80, title: '作者', align: 'center'},
-                {field: 'price', width: 80, title: '价格', align: 'center'},
-                {field: 'stock', width: 80, title: '库存', align: 'center'},
-                {title:"图书状态",width: 100,align: 'center',templet:function(res){
+                {templet:'<div>{{d.typeInfo.name}}</div>', miniWidth: 80, title: '图书类型', align: 'center'},
+                {field: 'name', miniWidth: 180, title: '图书名称', align: 'center'},
+                {field: 'author', miniWidth: 80, title: '作者', align: 'center'},
+                {field: 'price', miniWidth: 80, title: '价格', align: 'center'},
+                {field: 'stock', miniWidth: 80, title: '库存', align: 'center'},
+                {title:"图书状态",miniWidth: 100,align: 'center',templet:function(res){
                         if(res.status=='1'){
                             return '<span class="layui-badge layui-bg-blue">可借阅</span>'
                         }else if(res.status=='0'){

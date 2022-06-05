@@ -72,12 +72,12 @@
             cols: [[
                 {type: "checkbox", width: 50, align: 'center'},
                 {field: 'id', width: 100, title: '序号', sort: true, align: 'center'},
-                {field: 'username', width: 100, title: '学号', align: 'center'},
-                {field: 'realName', width: 100, title: '真实姓名', align: 'center'},
-                {field: 'sex', width: 80, title: '性别', align: 'center'},
-                {field: 'tel', width: 150, title: '联系方式', align: 'center'},
-                {templet:"<div>{{layui.util.toDateString(d.registerDate,'yyyy-MM-dd HH:mm:ss')}}</div>", width: 200, title: '入学时间', align: 'center'},
-                {templet: '<div>{{d.email}}</div>', width: 150, title: '邮箱', align: 'center'},
+                {field: 'username', minWidth: 100, title: '学号', align: 'center'},
+                {field: 'realName', minWidth: 100, title: '真实姓名', align: 'center'},
+                {field: 'sex', minWidth: 80, title: '性别', align: 'center'},
+                {field: 'tel', minWidth: 150, title: '联系方式', align: 'center'},
+                {templet:"<div>{{layui.util.toDateString(d.registerDate,'yyyy-MM-dd HH:mm:ss')}}</div>", minWidth: 200, title: '入学时间', align: 'center'},
+                {templet: '<div>{{d.email}}</div>', minWidth: 150, title: '邮箱', align: 'center'},
                 {title: "读者状态", align: 'center', minWidth: 120, templet: function (res) {
                         if(res.status=='1'){
                             return '<span class="layui-badge layui-bg-green">正常借阅</span>'
