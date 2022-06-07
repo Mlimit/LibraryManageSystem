@@ -38,12 +38,11 @@
                             <option value="3">丢失</option>
                         </select>
                     </div>
-                   图书类型
+                   图书状态
                     <div class="layui-inline">
                         <select class="layui-input" name="status" id="status">
                             <option value=""></option>
-                            <option value="0">未借出</option>
-                            <option value="1">在借中</option>
+                            <option value="0">在借中</option>
                         </select>
                     </div>
                     <button class="layui-btn" data-type="reload">搜索</button>
@@ -90,6 +89,7 @@
             cols: [[
                 {type: "checkbox", width: 50},
                 {field: 'id', width: 100, title: 'ID', sort: true},
+                {field: 'bookId', width: 120, title: '图书编号'},
                 {templet: '<div><a href="javascript:void(0)" style="color:#00b7ee" lay-event="bookInfoEvent">{{d.bookInfo.name}}</a></div>',
                     width: 100, title: '图书名称'},
                 {templet: '<div>{{d.readerInfo.username}}</div>', width: 120, title: '学号'},
@@ -105,11 +105,11 @@
                           return '<span class="layui-badge layui-bg-gray">延迟还书</span>'
 
                       }else if(res.backType=='2') {
-                          return '<span class="layui-badge layui-bg-yellow">破损还书</span>'
+                          return '<span class="layui-badge layui-bg-orange">破损还书</span>'
                       }else if(res.backType=='3'){
-                          return '<span class="layui-badge layui-bg-green">丢失图书</span>'
+                          return '<span class="layui-badge layui-bg-red">丢失图书</span>'
                       }else{
-                          return '<span class="layui-badge layui-bg-red">在借中</span>'
+                          return '<span class="layui-badge layui-bg-blue">在借中</span>'
                       }
                     }},
                 {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}

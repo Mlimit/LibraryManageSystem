@@ -65,7 +65,7 @@ public class LendListServiceImpl implements LendListService {
             BookInfo bookInfo=bookInfoMapper.selectByPrimaryKey(Integer.parseInt(bid));
             int stock = bookInfo.getStock();
             bookInfo.setStock(++stock);//库存+1
-            bookInfo.setStatus(0);//改为未借出
+            bookInfo.setStatus(1);//改为未借出(可借阅)
             bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
             bookInfoMapper.updateByPrimaryKey(bookInfo);
         }
@@ -97,7 +97,7 @@ public class LendListServiceImpl implements LendListService {
             BookInfo bookInfo=bookInfoMapper.selectByPrimaryKey(Integer.parseInt(bid));
             int stock = bookInfo.getStock();
             bookInfo.setStock(++stock);//图书归还，库存+1
-            bookInfo.setStatus(0);//改为未借出
+            bookInfo.setStatus(1);//改为未借出(可借阅)
             bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
             bookInfoMapper.updateByPrimaryKey(bookInfo);
         }
@@ -120,7 +120,7 @@ public class LendListServiceImpl implements LendListService {
             BookInfo bookInfo=bookInfoMapper.selectByPrimaryKey(lend.getBookId());
             int stock = bookInfo.getStock();
             bookInfo.setStock(--stock);
-            bookInfo.setStatus(0);//改为未借出
+            bookInfo.setStatus(1);//改为未借出(可借阅)
             bookInfoMapper.updateBookStockByIsbn(bookInfo);//更新所有同isbn的库存
             bookInfoMapper.updateByPrimaryKey(bookInfo);
         }

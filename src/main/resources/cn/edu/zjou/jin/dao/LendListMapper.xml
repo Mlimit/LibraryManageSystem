@@ -202,10 +202,10 @@
           如果书未被借出，状态为1，即可借阅，则还书时间非空
           -->
           <if test="bookInfo.status!=null and bookInfo.status==0">
-            and book.status=0 and backDate is null
+            and book.status=0 and lend.backDate is null
           </if>
           <if test="bookInfo.status!=null and bookInfo.status==1">
-            and book.status=1 and backDate is not null
+            and book.status=1 and lend.backDate is not null
           </if>
         </if>
         <!--根据读者学号查询-->
