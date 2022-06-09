@@ -104,6 +104,7 @@ public class LendListController {
                     lendList.setReaderId(readerCard2.getId());//读者id
                     lendList.setBookId(Integer.valueOf(bid));//书的id
                     lendList.setLendDate(new Date());
+                    lendList.setLendDays(0);
                     lendListService.addLendListSubmit(lendList);
                     int stock = bookInfo.getStock();
                     bookInfo.setStock(--stock);//图书借出，库存-1
