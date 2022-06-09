@@ -172,6 +172,9 @@
     select book_info.*,type_info.name as type_name
     from book_info,type_info
     where type_info.id = book_info.type_id
+    <if test="id!=null">
+      and book_info.id = #{id,jdbcType=INTEGER}
+    </if>
     <if test="name!=null">
       and book_info.name like '%${name}%'
     </if>

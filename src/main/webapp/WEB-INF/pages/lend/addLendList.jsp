@@ -21,6 +21,12 @@
 <div class="layui-form layuimini-form">
     <!---高级查询图书-->
     <div class="layui-form-item">
+        <label class="layui-form-label required">图书编号</label>
+        <div class="layui-input-block">
+            <input class="layui-input" name="id" id="id" autocomplete="off" data-type="reload">
+        </div>
+    </div>
+    <div class="layui-form-item">
         <label class="layui-form-label required">图书名称</label>
         <div class="layui-input-block">
             <input class="layui-input" name="name" id="name" autocomplete="off" data-type="reload">
@@ -82,20 +88,26 @@
         });
         var $ = layui.$, active = {
             reload: function(){
-                var name = $('#name').val()
+                var name = $('#name').val(),
+                    id = $('#id').val()
                 //执行重载
                 table.reload('testReload', {
                     page: {
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        name:name
+                        name:name,
+                        id:id
                     }
                 }, 'data');
             }
         };
 
         $('input[name=name]').change(function() {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        $('input[id=id]').change(function() {
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
         });
