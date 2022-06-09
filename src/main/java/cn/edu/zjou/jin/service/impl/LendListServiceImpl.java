@@ -1,6 +1,6 @@
 package cn.edu.zjou.jin.service.impl;
 
-import cn.edu.zjou.jin.codeutil.DateUtil;
+import cn.edu.zjou.jin.utils.DateUtil;
 import cn.edu.zjou.jin.dao.ReaderInfoMapper;
 import cn.edu.zjou.jin.po.ReaderInfo;
 import cn.edu.zjou.jin.service.LendListService;
@@ -151,6 +151,10 @@ public class LendListServiceImpl implements LendListService {
                 days = DateUtil.dateCompute(lendlist.getLendDate(), new Date());
                 lendlist.setLendDays(++days);
             }
+//            else{//注释掉 减少工作量
+//                days = DateUtil.dateCompute(lendlist.getLendDate(), lendlist.getBackDate());
+//                lendlist.setLendDays(++days);
+//            }
             lendListMapper.updateByPrimaryKey(lendlist);
         }
     }

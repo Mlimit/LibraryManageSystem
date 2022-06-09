@@ -1,4 +1,4 @@
-package cn.edu.zjou.jin.codeutil;
+package cn.edu.zjou.jin.utils;
 
 import java.text.ParseException;
 import java.util.Date;
