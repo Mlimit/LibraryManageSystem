@@ -19,36 +19,36 @@
 
 #### 借阅管理
 
-![image-20230517095513863](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/60202f98-c57b-4542-8e6c-cdda30e47826)
+![image-20230517095513863](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517095234763.png?raw=true)
 
 借书模块
 
 设想是管理员用扫描枪扫条码，ISBN直接导入到查询框中显示对应信息进行借书
 
-![image-20230517100502429](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/ddf67385-b70a-4f34-8f02-722aff0df9e6)
+![image-20230517100502429](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517095513863.png?raw=true)
 
 #### 图书管理
 
-![image-20230517100702272](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/3606a480-bdbe-41ac-bab9-1a2ccf97a3d5)
+![image-20230517100702272](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517100702272.png?raw=true)
 #### 读者管理
 
-![image-20230517101550895](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/257ce68e-c4d5-422d-ae54-ba12a286fbee)
+![image-20230517101550895](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517101550895.png?raw=true)
 
 #### 类型管理
 
-![image-20230517100726157](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/2b62e4ab-5bd5-4fe5-a39b-aa5177f55811)
+![image-20230517100726157](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517100726157.png?raw=true)
 
 #### 公告管理
 
-![image-20230517100745169](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/b29c6544-8d47-4fc6-a0d5-6204d72d481e)
+![image-20230517100745169](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517100745169.png?raw=true)
 
 #### 管理员管理
 
-![image-20230517100934992](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/97866b03-d4c7-4c9d-b842-9b23dea30a07)
+![image-20230517100934992](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517100934992.png?raw=true)
 
 #### 统计分析
 
-![image-20230517100944791](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/b9d05a9c-a79e-4a52-a77b-c370d387cf2a)
+![image-20230517100944791](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517100944791.png?raw=true)
 
 ### 2.2用户端
 
@@ -56,19 +56,19 @@
 
 #### 图书查询
 
-![image-20230517101800655](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/efcb71f3-3ed7-40fe-8348-b1fde04e618d)
+![image-20230517101800655](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517101800655.png?raw=true)
 
 #### 借阅记录
 
-![image-20230517101822899](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/b220bf59-679e-4e46-88cd-4972a9c673f7)
+![image-20230517101822899](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517101822899.png?raw=true)
 
 #### 公告查看
 
-![image-20230517101835900](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/f9ec2c2c-f306-4eb8-b344-be1fad3a1de9)
+![image-20230517101835900](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517101835900.png?raw=true)
 
 #### 个人信息修改
 
-![image-20230517101847440](https://github.com/Mlimit/LibraryManageSystem/assets/63535130/0f17689c-f8ec-4529-ba7d-9e4ba3bb3897)
+![image-20230517101847440](https://github.com/Mlimit/LibraryManageSystem/blob/master/asset/image-20230517101847440.png?raw=true)
 
 ## 3.配置教程 
 
