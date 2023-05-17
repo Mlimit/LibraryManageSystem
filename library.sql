@@ -11,7 +11,7 @@
  Target Server Version : 80021
  File Encoding         : 65001
 
- Date: 05/06/2022 14:39:59
+ Date: 17/05/2023 10:24:35
 */
 
 SET NAMES utf8mb4;
@@ -102,7 +102,7 @@ CREATE TABLE `lend_list`  (
   INDEX `lend_list_ibfk_readerId`(`readerId`) USING BTREE,
   CONSTRAINT `lend_list_ibfk_bookId` FOREIGN KEY (`bookId`) REFERENCES `book_info` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `lend_list_ibfk_readerId` FOREIGN KEY (`readerId`) REFERENCES `reader_info` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '借阅记录（谁在何时借走了什么书，并且有没有归还，归还时间多少）' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 72 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '借阅记录（谁在何时借走了什么书，并且有没有归还，归还时间多少）' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of lend_list
@@ -113,24 +113,24 @@ INSERT INTO `lend_list` VALUES (3, 3, 3, '2022-05-21 21:50:22', '2022-06-03 21:5
 INSERT INTO `lend_list` VALUES (4, 5, 1, '2022-05-21 21:35:35', '2022-06-03 21:35:47', 1, NULL, 13);
 INSERT INTO `lend_list` VALUES (5, 6, 3, '2022-05-21 21:42:35', '2022-06-07 21:52:24', 0, NULL, 18);
 INSERT INTO `lend_list` VALUES (6, 1, 12, '2022-05-13 13:20:12', '2022-06-03 13:20:35', 0, NULL, 22);
-INSERT INTO `lend_list` VALUES (7, 1, 12, '2022-05-13 13:45:23', NULL, NULL, NULL, 23);
+INSERT INTO `lend_list` VALUES (7, 1, 12, '2022-05-13 13:45:23', NULL, NULL, NULL, 369);
 INSERT INTO `lend_list` VALUES (8, 7, 2, '2022-05-13 14:03:59', '2022-06-07 21:52:55', 0, NULL, 26);
 INSERT INTO `lend_list` VALUES (9, 2, 12, '2022-06-03 16:08:31', '2022-06-03 21:42:21', 0, NULL, 1);
 INSERT INTO `lend_list` VALUES (10, 1, 12, '2022-06-03 16:10:24', '2022-06-03 16:55:49', 2, NULL, 1);
 INSERT INTO `lend_list` VALUES (11, 8, 12, '2022-06-03 16:10:55', '2022-06-03 16:55:40', 1, NULL, 1);
 INSERT INTO `lend_list` VALUES (12, 1, 12, '2022-06-03 16:40:19', '2022-06-03 16:55:40', 0, NULL, 1);
 INSERT INTO `lend_list` VALUES (13, 1, 1, '2022-06-03 18:43:03', '2022-06-07 22:36:09', 0, NULL, 1);
-INSERT INTO `lend_list` VALUES (14, 7, 1, '2022-06-03 23:27:38', NULL, NULL, NULL, 2);
-INSERT INTO `lend_list` VALUES (15, 3, 1, '2022-06-03 23:31:01', NULL, NULL, NULL, 2);
-INSERT INTO `lend_list` VALUES (16, 4, 1, '2022-06-03 23:46:00', NULL, NULL, NULL, 2);
-INSERT INTO `lend_list` VALUES (17, 8, 2, '2022-06-03 23:46:43', NULL, NULL, NULL, 2);
-INSERT INTO `lend_list` VALUES (18, 1, 2, '2022-06-04 00:29:23', NULL, NULL, NULL, 2);
-INSERT INTO `lend_list` VALUES (19, 2, 2, '2022-06-04 00:39:19', NULL, NULL, NULL, 2);
+INSERT INTO `lend_list` VALUES (14, 7, 1, '2022-06-03 23:27:38', NULL, NULL, NULL, 348);
+INSERT INTO `lend_list` VALUES (15, 3, 1, '2022-06-03 23:31:01', NULL, NULL, NULL, 348);
+INSERT INTO `lend_list` VALUES (16, 4, 1, '2022-06-03 23:46:00', NULL, NULL, NULL, 348);
+INSERT INTO `lend_list` VALUES (17, 8, 2, '2022-06-03 23:46:43', NULL, NULL, NULL, 348);
+INSERT INTO `lend_list` VALUES (18, 1, 2, '2022-06-04 00:29:23', NULL, NULL, NULL, 348);
+INSERT INTO `lend_list` VALUES (19, 2, 2, '2022-06-04 00:39:19', NULL, NULL, NULL, 348);
 INSERT INTO `lend_list` VALUES (20, 5, 2, '2022-06-04 00:40:52', '2022-06-04 10:44:28', 0, NULL, 1);
-INSERT INTO `lend_list` VALUES (21, 6, 3, '2022-06-04 00:51:03', NULL, NULL, NULL, 2);
-INSERT INTO `lend_list` VALUES (69, 12, 12, '2022-06-05 11:11:00', NULL, NULL, NULL, 1);
+INSERT INTO `lend_list` VALUES (21, 6, 3, '2022-06-04 00:51:03', NULL, NULL, NULL, 348);
+INSERT INTO `lend_list` VALUES (69, 12, 12, '2022-06-05 11:11:00', NULL, NULL, NULL, 346);
 INSERT INTO `lend_list` VALUES (70, 23, 12, '2022-06-05 11:12:18', '2022-06-05 11:15:52', 0, NULL, NULL);
-INSERT INTO `lend_list` VALUES (71, 17, 12, '2022-06-05 11:13:05', NULL, NULL, NULL, 1);
+INSERT INTO `lend_list` VALUES (71, 17, 12, '2022-06-05 11:13:05', NULL, NULL, NULL, 346);
 
 -- ----------------------------
 -- Table structure for notice
@@ -171,7 +171,7 @@ CREATE TABLE `reader_info`  (
   `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
   `registerDate` date NULL DEFAULT NULL COMMENT '入学日期',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '读者信息（包括登录账号密码等）' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '读者信息（包括登录账号密码等）' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of reader_info
@@ -187,7 +187,7 @@ INSERT INTO `reader_info` VALUES (8, '9210607108', '123456', '元生祖', '男',
 INSERT INTO `reader_info` VALUES (9, '9210607109', '123456', '元文俊', '男', '1999-06-07', b'1', '13018990005', 'tongliangfa-ghq@sinosig. com', '2021-09-15');
 INSERT INTO `reader_info` VALUES (10, '9210607110', '123456', '戚友', '男', '1999-06-08', b'1', '13018990006', 'tongxin@solutionok. com', '2021-09-15');
 INSERT INTO `reader_info` VALUES (11, '9210607111', '123456', '李柏辉', '男', '1999-06-09', b'1', '13018990007', 'tongxiquan@126. com', '2021-09-15');
-INSERT INTO `reader_info` VALUES (12, '9210607112', '123456', '杨谨瑞', '男', '2000-11-27', b'1', '19818007796', '1172507529@qq.com', '2021-09-15');
+INSERT INTO `reader_info` VALUES (12, '9210607112', '123456', '木易', '男', '1995-06-10', b'0', '19818007796', '1172507529@qq.com', '2021-09-15');
 INSERT INTO `reader_info` VALUES (13, '9210607113', '123456', '昌远隆', '男', '1999-06-11', b'1', '13018990009', 'tongyan@chinaunicom. cn', '2021-09-15');
 INSERT INTO `reader_info` VALUES (14, '9210607114', '123456', '冯如云', '女', '1999-06-12', b'1', '13018990010', 'tosin-tech@163. com', '2021-09-15');
 INSERT INTO `reader_info` VALUES (15, '9210607115', '123456', '赵宝', '男', '1999-06-13', b'1', '13018990011', 'tqg317@163. com', '2021-09-15');
@@ -206,7 +206,7 @@ CREATE TABLE `type_info`  (
   `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图书分类名称',
   `remarks` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '图书类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '图书类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of type_info
